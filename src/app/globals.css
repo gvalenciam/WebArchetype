@@ -2,26 +2,899 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/**** Fonts ****/
+/* Roboto */
+@layer base {
+  @font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 100;
+    font-display: "swap";
+    src: local("Roboto Thin Italic"),
+      url("/fonts/Roboto-ThinItalic.ttf") format("truetype");
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 100;
+    font-display: "swap";
+    font-variant: normal;
+    src: local("Roboto Thin"), url("/fonts/Roboto-Thin.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 300;
+    font-display: "swap";
+    src: local("Roboto Light Italic"),
+      url("/fonts/Roboto-LightItalic.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-display: "swap";
+    src: local("Roboto Light"),
+      url("/fonts/Roboto-Light.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 400;
+    font-display: "swap";
+    src: local("Roboto Italic"),
+      url("/fonts/Roboto-Italic.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-display: "swap";
+    src: local("Roboto Regular"),
+      url("/fonts/Roboto-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 500;
+    font-display: "swap";
+    src: local("Roboto Medium Italic"),
+      url("/fonts/Roboto-MediumItalic.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-display: "swap";
+    src: local("Roboto Medium"),
+      url("/fonts/Roboto-Medium.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 700;
+    font-display: "swap";
+    src: local("Roboto Bold Italic"),
+      url("/fonts/Roboto-BoldItalic.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-display: "swap";
+    src: local("Roboto Bold"), url("/fonts/Roboto-Bold.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 900;
+    font-display: "swap";
+    src: local("Roboto Black Italic"),
+      url("/fonts/Roboto-BlackItalic.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    font-display: "swap";
+    src: local("Roboto Black"),
+      url("/fonts/Roboto-Black.ttf") format("truetype");
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/**** Layout ****/
+/* Layout Container Margin */
+@layer base {
+  .ml {
+    @apply ml-12;
+    @apply sm:ml-16;
+    @apply md:ml-20;
+    @apply lg:ml-24;
+    @apply xl:ml-28;
+  }
+  .mr {
+    @apply mr-12;
+    @apply sm:mr-16;
+    @apply md:mr-20;
+    @apply lg:mr-24;
+    @apply xl:mr-28;
+  }
+  .mt {
+    @apply mt-12;
+    @apply sm:mt-16;
+    @apply md:mt-20;
+    @apply lg:mt-24;
+    @apply xl:mt-28;
+  }
+  .mb {
+    @apply mb-12;
+    @apply sm:mb-16;
+    @apply md:mb-20;
+    @apply lg:mb-24;
+    @apply xl:mb-28;
+  }
+  .mx {
+    @apply mx-12;
+    @apply sm:mx-16;
+    @apply md:mx-20;
+    @apply lg:mx-24;
+    @apply xl:mx-28;
+  }
+  .my {
+    @apply my-12;
+    @apply sm:my-16;
+    @apply md:my-20;
+    @apply lg:my-24;
+    @apply xl:my-28;
+  }
+
+  .mxy {
+    @apply m-12;
+    @apply sm:m-16;
+    @apply md:m-20;
+    @apply lg:m-24;
+    @apply xl:m-28;
+  }
+}
+
+/* Layout Container Padding */
+@layer base {
+  .pl {
+    @apply pl-12;
+    @apply sm:pl-16;
+    @apply md:pl-20;
+    @apply lg:pl-24;
+    @apply xl:pl-28;
+  }
+  .pr {
+    @apply pr-12;
+    @apply sm:pr-16;
+    @apply md:pr-20;
+    @apply lg:pr-24;
+    @apply xl:pr-28;
+  }
+  .pt {
+    @apply pt-12;
+    @apply sm:pt-16;
+    @apply md:pt-20;
+    @apply lg:pt-24;
+    @apply xl:pt-28;
+  }
+  .pb {
+    @apply pb-12;
+    @apply sm:pb-16;
+    @apply md:pb-20;
+    @apply lg:pb-24;
+    @apply xl:pb-28;
+  }
+  .px {
+    @apply px-12;
+    @apply sm:px-16;
+    @apply md:px-20;
+    @apply lg:px-24;
+    @apply xl:px-28;
+  }
+  .py {
+    @apply py-12;
+    @apply sm:py-16;
+    @apply md:py-20;
+    @apply lg:py-24;
+    @apply xl:py-28;
+  }
+
+  .pxy {
+    @apply p-12;
+    @apply sm:p-16;
+    @apply md:p-20;
+    @apply lg:p-24;
+    @apply xl:p-28;
+  }
+}
+
+/* Flex */
+@layer base {
+  .fcc {
+    @apply flex justify-center items-center;
+  }
+  .fcs {
+    @apply flex justify-center items-start;
+  }
+  .fce {
+    @apply flex justify-center items-end;
+  }
+  .fbc {
+    @apply flex justify-between items-center;
+  }
+  .fbs {
+    @apply flex justify-between items-start;
+  }
+  .fbe {
+    @apply flex justify-between items-end;
+  }
+  .fec {
+    @apply flex justify-end items-center;
+  }
+  .fes {
+    @apply flex justify-end items-start;
+  }
+  .fee {
+    @apply flex justify-end items-end;
+  }
+  .fee {
+    @apply flex justify-end items-end;
+  }
+  .fas {
+    @apply flex justify-around items-start;
+  }
+  .fae {
+    @apply flex justify-around items-end;
+  }
+  .fae {
+    @apply flex justify-around items-end;
+  }
+}
+
+/* Flex Column */
+@layer base {
+  .fccc {
+    @apply flex flex-col justify-center items-center;
+  }
+  .fccs {
+    @apply flex flex-col  justify-center items-start;
+  }
+  .fcce {
+    @apply flex flex-col justify-center items-end;
+  }
+  flex-col .fcbc {
+    @apply flex flex-col justify-between items-center;
+  }
+  flex-col .fcbs {
+    @apply flex flex-col justify-between items-start;
+  }
+  flex-col .fcbe {
+    @apply flex flex-col justify-between items-end;
+  }
+  flex-col .fcec {
+    @apply flex flex-col justify-end items-center;
+  }
+  flex-col .fces {
+    @apply flex flex-col justify-end items-start;
+  }
+  flex-col .fcee {
+    @apply flex flex-col justify-end items-end;
+  }
+  flex-col .fcee {
+    @apply flex flex-col justify-end items-end;
+  }
+  flex-col .fcas {
+    @apply flex flex-col justify-around items-start;
+  }
+  flex-col .fcae {
+    @apply flex flex-col justify-around items-end;
+  }
+  flex-col .fcae {
+    @apply flex flex-col justify-around items-end;
+  }
+}
+
+/**** Typography ****/
+/* Heading */
+@layer base {
+  .heading {
+    @apply font-Roboto;
+    @apply font-bold;
+  }
+  .h10 {
+    @apply heading;
+    @apply text-[16px];
+    @apply sm:text-[18px];
+    @apply md:text-[20px];
+    @apply lg:text-[24px];
+    @apply xl:text-[28px];
+  }
+  .h20 {
+    @apply heading;
+    @apply text-[18px];
+    @apply sm:text-[20px];
+    @apply md:text-[22px];
+    @apply lg:text-[26px];
+    @apply xl:text-[30px];
+  }
+  .h30 {
+    @apply heading;
+    @apply text-[20px];
+    @apply sm:text-[22px];
+    @apply md:text-[24px];
+    @apply lg:text-[28px];
+    @apply xl:text-[32px];
+  }
+  .h40 {
+    @apply heading;
+    @apply text-[22px];
+    @apply sm:text-[24px];
+    @apply md:text-[26px];
+    @apply lg:text-[30px];
+    @apply xl:text-[34px];
+  }
+  .h50 {
+    @apply heading;
+    @apply text-[24px];
+    @apply sm:text-[28px];
+    @apply md:text-[30px];
+    @apply lg:text-[34px];
+    @apply xl:text-[38px];
+  }
+}
+
+/* Text base */
+@layer base {
+  .tbase {
+    @apply font-Roboto;
+  }
+  .tbase10 {
+    @apply tbase;
+    @apply text-[14px];
+    @apply sm:text-[16px];
+    @apply md:text-[18px];
+    @apply lg:text-[22px];
+    @apply xl:text-[26px];
+  }
+  .tbase20 {
+    @apply tbase;
+    @apply text-[16px];
+    @apply sm:text-[18px];
+    @apply md:text-[20px];
+    @apply lg:text-[24px];
+    @apply xl:text-[28px];
+  }
+  .tbase30 {
+    @apply tbase;
+    @apply text-[18px];
+    @apply sm:text-[20px];
+    @apply md:text-[22px];
+    @apply lg:text-[26px];
+    @apply xl:text-[30px];
+  }
+  .tbase40 {
+    @apply tbase;
+    @apply text-[20px];
+    @apply sm:text-[22px];
+    @apply md:text-[24px];
+    @apply lg:text-[28px];
+    @apply xl:text-[32px];
+  }
+  .tbase50 {
+    @apply tbase;
+    @apply text-[22px];
+    @apply sm:text-[24px];
+    @apply md:text-[26px];
+    @apply lg:text-[30px];
+    @apply xl:text-[34px];
+  }
+}
+
+/* Text Thin */
+@layer base {
+  .text-thin {
+    @apply font-thin;
+  }
+  .tt10 {
+    @apply tbase10 text-thin;
+  }
+  .tt20 {
+    @apply tbase20 text-thin;
+  }
+  .tt30 {
+    @apply tbase30 text-thin;
+  }
+  .tt40 {
+    @apply tbase40 text-thin;
+  }
+  .tt50 {
+    @apply tbase50 text-thin;
+  }
+}
+
+/* Text Thin Italic */
+@layer base {
+  .text-thin-italic {
+    @apply font-thin italic;
+  }
+  .tti10 {
+    @apply tbase10 text-thin-italic;
+  }
+  .tti20 {
+    @apply tbase20 text-thin-italic;
+  }
+  .tti30 {
+    @apply tbase30 text-thin-italic;
+  }
+  .tti40 {
+    @apply tbase40 text-thin-italic;
+  }
+  .tti50 {
+    @apply tb50 text-thin-italic;
+  }
+}
+
+/* Text Light */
+@layer base {
+  .text-light {
+    @apply font-light;
+  }
+  .tl10 {
+    @apply tbase10 text-light;
+  }
+  .tl20 {
+    @apply tbase20 text-light;
+  }
+  .tl30 {
+    @apply tbase30 text-light;
+  }
+  .tl40 {
+    @apply tbase40 text-light;
+  }
+  .tl50 {
+    @apply tbase50 text-light;
+  }
+}
+
+/* Text Light Italic */
+@layer base {
+  .text-light-italic {
+    @apply font-light italic;
+  }
+  .tli10 {
+    @apply tbase10 text-light-italic;
+  }
+  .tli20 {
+    @apply tbase20 text-light-italic;
+  }
+  .tli30 {
+    @apply tbase30 text-light-italic;
+  }
+  .tli40 {
+    @apply tbase40 text-light-italic;
+  }
+  .tli50 {
+    @apply tbase50 text-light-italic;
+  }
+}
+
+/* Text Regular */
+@layer base {
+  .text-regular {
+    @apply font-normal;
+  }
+  .tr10 {
+    @apply tbase10 text-regular;
+  }
+  .tr20 {
+    @apply tbase20 text-regular;
+  }
+  .tr30 {
+    @apply tbase30 text-regular;
+  }
+  .tr40 {
+    @apply tbase40 text-regular;
+  }
+  .tr50 {
+    @apply tbase50 text-regular;
+  }
+}
+
+/* Text Regular Italic */
+@layer base {
+  .text-regular-italic {
+    @apply font-normal italic;
+  }
+  .tri10 {
+    @apply tbase10 text-regular-italic;
+  }
+  .tri20 {
+    @apply tbase20 text-regular-italic;
+  }
+  .tri30 {
+    @apply tbase30 text-regular-italic;
+  }
+  .tri40 {
+    @apply tbase40 text-regular-italic;
+  }
+  .tri50 {
+    @apply tbase50 text-regular-italic;
+  }
+}
+
+/* Text Medium */
+@layer base {
+  .text-medium {
+    @apply font-medium;
+  }
+  .tm10 {
+    @apply tbase10 text-medium;
+  }
+  .tm20 {
+    @apply tbase20 text-medium;
+  }
+  .tm30 {
+    @apply tbase30 text-medium;
+  }
+  .tm40 {
+    @apply tbase40 text-medium;
+  }
+  .tm50 {
+    @apply tbase50 text-medium;
+  }
+}
+
+/* Text Medium Italic */
+@layer base {
+  .text-medium-italic {
+    @apply font-medium italic;
+  }
+  .tmi10 {
+    @apply tbase10 text-medium-italic;
+  }
+  .tmi20 {
+    @apply tbase20 text-medium-italic;
+  }
+  .tmi30 {
+    @apply tbase30 text-medium-italic;
+  }
+  .tmi40 {
+    @apply tbase40 text-medium-italic;
+  }
+  .tmi50 {
+    @apply tbase50 text-medium-italic;
+  }
+}
+
+/* Text Bold */
+@layer base {
+  .text-bold {
+    @apply font-bold;
+  }
+  .tb10 {
+    @apply tbase10 text-bold;
+  }
+  .tb20 {
+    @apply tbase20 text-bold;
+  }
+  .tb30 {
+    @apply tbase30 text-bold;
+  }
+  .tb40 {
+    @apply tbase40 text-bold;
+  }
+  .tb50 {
+    @apply tbase50 text-bold;
+  }
+}
+
+/* Text Bold Italic */
+@layer base {
+  .text-bold-italic {
+    @apply font-bold italic;
+  }
+  .tbi10 {
+    @apply tbase10 text-bold-italic;
+  }
+  .tbi20 {
+    @apply tbase20 text-bold-italic;
+  }
+  .tbi30 {
+    @apply tbase30 text-bold-italic;
+  }
+  .tbi40 {
+    @apply tbase40 text-bold-italic;
+  }
+  .tbi50 {
+    @apply tbase50 text-bold-italic;
+  }
+}
+
+/* Text Black */
+@layer base {
+  .text-fblack {
+    @apply font-black;
+  }
+  .tbb10 {
+    @apply tbase10 text-fblack;
+  }
+  .tbb20 {
+    @apply tbase20 text-fblack;
+  }
+  .tbb30 {
+    @apply tbase30 text-fblack;
+  }
+  .tbb40 {
+    @apply tbase40 text-fblack;
+  }
+  .tbb50 {
+    @apply tbase50 text-fblack;
+  }
+}
+
+/* Text Black Italic */
+@layer base {
+  .text-black-italic {
+    @apply font-black italic;
+  }
+  .tbbi10 {
+    @apply tbase10 text-black-italic;
+  }
+  .tbbi20 {
+    @apply tbase20 text-black-italic;
+  }
+  .tbbi30 {
+    @apply tbase30 text-black-italic;
+  }
+  .tbbi40 {
+    @apply tbase40 text-black-italic;
+  }
+  .tbbi50 {
+    @apply tbase50 text-black-italic;
+  }
+}
+
+/**** General Margin ****/
+/* Element Margin */
+@layer utilities {
+  .eml {
+    @apply ml-1;
+    @apply sm:ml-1;
+    @apply md:ml-2;
+    @apply lg:ml-2;
+    @apply xl:ml-3;
+  }
+  .emr {
+    @apply mr-1;
+    @apply sm:mr-1;
+    @apply md:mr-2;
+    @apply lg:mr-2;
+    @apply xl:mr-3;
+  }
+  .emt {
+    @apply mt-1;
+    @apply sm:mt-1;
+    @apply md:mt-2;
+    @apply lg:mt-2;
+    @apply xl:mt-3;
+  }
+  .emb {
+    @apply mb-1;
+    @apply sm:mb-1;
+    @apply md:mb-2;
+    @apply lg:mb-2;
+    @apply xl:mb-3;
+  }
+  .emx {
+    @apply mx-1;
+    @apply sm:mx-1;
+    @apply md:mx-2;
+    @apply lg:mx-2;
+    @apply xl:mx-3;
+  }
+  .emy {
+    @apply my-1;
+    @apply sm:my-1;
+    @apply md:my-2;
+    @apply lg:my-2;
+    @apply xl:my-3;
+  }
+
+  .emxy {
+    @apply m-1;
+    @apply sm:m-1;
+    @apply md:m-2;
+    @apply lg:m-2;
+    @apply xl:m-3;
+  }
+}
+
+/* Element Margin Except Last */
+@layer utilities {
+  .eml-nolast {
+    @apply ml-1;
+    @apply sm:ml-1;
+    @apply md:ml-2;
+    @apply lg:ml-2;
+    @apply xl:ml-3;
+    @apply last-of-type:ml-0;
+  }
+  .emr-nolast {
+    @apply mr-1;
+    @apply sm:mr-1;
+    @apply md:mr-2;
+    @apply lg:mr-2;
+    @apply xl:mr-3;
+    @apply last-of-type:mr-0;
+  }
+  .emt-nolast {
+    @apply mt-1;
+    @apply sm:mt-1;
+    @apply md:mt-2;
+    @apply lg:mt-2;
+    @apply xl:mt-3;
+    @apply last-of-type:mt-0;
+  }
+  .emb-nolast {
+    @apply mb-1;
+    @apply sm:mb-1;
+    @apply md:mb-2;
+    @apply lg:mb-2;
+    @apply xl:mb-3;
+    @apply last-of-type:mb-0;
+  }
+  .emx-nolast {
+    @apply mx-1;
+    @apply sm:mx-1;
+    @apply md:mx-2;
+    @apply lg:mx-2;
+    @apply xl:mx-3;
+    @apply last-of-type:mx-0;
+  }
+  .emy-nolast {
+    @apply my-1;
+    @apply sm:my-1;
+    @apply md:my-2;
+    @apply lg:my-2;
+    @apply xl:my-3;
+    @apply last-of-type:my-0;
+  }
+
+  .emxy-nolast {
+    @apply m-1;
+    @apply sm:m-1;
+    @apply md:m-2;
+    @apply lg:m-2;
+    @apply xl:m-3;
+    @apply last-of-type:m-0;
+  }
+}
+
+/* Element Padding */
+@layer utilities {
+  .epl {
+    @apply pl-1;
+    @apply sm:pl-1;
+    @apply md:pl-2;
+    @apply lg:pl-2;
+    @apply xl:pl-3;
+  }
+  .epr {
+    @apply pr-1;
+    @apply sm:pr-1;
+    @apply md:pr-2;
+    @apply lg:pr-2;
+    @apply xl:pr-3;
+  }
+  .ept {
+    @apply pt-1;
+    @apply sm:pt-1;
+    @apply md:pt-2;
+    @apply lg:pt-2;
+    @apply xl:pt-3;
+  }
+  .epb {
+    @apply pb-1;
+    @apply sm:pb-1;
+    @apply md:pb-2;
+    @apply lg:pb-2;
+    @apply xl:pb-3;
+  }
+  .epx {
+    @apply px-1;
+    @apply sm:px-1;
+    @apply md:px-2;
+    @apply lg:px-2;
+    @apply xl:px-3;
+  }
+  .epy {
+    @apply py-1;
+    @apply sm:py-1;
+    @apply md:py-2;
+    @apply lg:py-2;
+    @apply xl:py-3;
+  }
+
+  .epxy {
+    @apply p-1;
+    @apply sm:p-1;
+    @apply md:p-2;
+    @apply lg:p-2;
+    @apply xl:p-3;
+  }
+}
+
+/* Element Padding Except Last */
+@layer utilities {
+  .epl {
+    @apply pl-1;
+    @apply sm:pl-1;
+    @apply md:pl-2;
+    @apply lg:pl-2;
+    @apply xl:pl-3;
+    @apply last-of-type:pl-0;
+  }
+  .epr {
+    @apply pr-1;
+    @apply sm:pr-1;
+    @apply md:pr-2;
+    @apply lg:pr-2;
+    @apply xl:pr-3;
+    @apply last-of-type:pr-0;
+  }
+  .ept {
+    @apply pt-1;
+    @apply sm:pt-1;
+    @apply md:pt-2;
+    @apply lg:pt-2;
+    @apply xl:pt-3;
+    @apply last-of-type:pt-0;
+  }
+  .epb {
+    @apply pb-1;
+    @apply sm:pb-1;
+    @apply md:pb-2;
+    @apply lg:pb-2;
+    @apply xl:pb-3;
+    @apply last-of-type:pb-0;
+  }
+  .epx {
+    @apply px-1;
+    @apply sm:px-1;
+    @apply md:px-2;
+    @apply lg:px-2;
+    @apply xl:px-3;
+    @apply last-of-type:px-0;
+  }
+  .epy {
+    @apply py-1;
+    @apply sm:py-1;
+    @apply md:py-2;
+    @apply lg:py-2;
+    @apply xl:py-3;
+    @apply last-of-type:py-0;
+  }
+
+  .epxy {
+    @apply p-1;
+    @apply sm:p-1;
+    @apply md:p-2;
+    @apply lg:p-2;
+    @apply xl:p-3;
+    @apply last-of-type:p-0;
+  }
 }

@@ -1,0 +1,14 @@
+@tailwind components;
+
+@layer components {
+  .baseLabel {
+  }
+  .txtLabel {
+  }
+  .h1Label {
+  }
+  .h2Label {
+  }
+  .h3Label {
+  }
+}
