@@ -16,6 +16,8 @@ module.exports = {
       primary: "#FF0000",
       secondary: "#00FF00",
       action: "#0000FF",
+      btnGradientStart: "#3DC694",
+      btnGradientEnd: "#38B1D7",
       txt: "#222222",
       subtxt: "#444444",
       white: "#FFFFFF",
