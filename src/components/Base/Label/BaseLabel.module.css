@@ -2,13 +2,18 @@
 
 @layer components {
   .baseLabel {
+    @apply text-txt;
   }
   .txtLabel {
+    @apply text-txt;
   }
   .h1Label {
+    @apply text-txt;
   }
   .h2Label {
+    @apply text-txt;
   }
   .h3Label {
+    @apply text-txt;
   }
 }

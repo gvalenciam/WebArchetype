@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ::-webkit-scrollbar {
+  background: #d7f4e9;
+  width: 10px;
+}
+
+&::-webkit-scrollbar-thumb {
+  background: #3dc694;
+  border-radius: 10px;
+  padding: 2px;
+  margin: 2px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  padding: 2px;
+  margin: 2px;
+} */
+
 /**** Fonts ****/
 /* Roboto */
 @layer base {
@@ -113,6 +131,68 @@
   }
 }
 
+/* Museo */
+@layer base {
+  @font-face {
+    font-family: "Museo";
+    font-style: normal;
+    font-weight: 100;
+    font-display: "swap";
+    font-variant: normal;
+    src: local("Museo Thin"),
+      url("/fonts/Museo/MuseoSans-100.otf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Museo";
+    font-style: normal;
+    font-weight: 300;
+    font-display: "swap";
+    src: local("Museo Light"),
+      url("/fonts/Museo/MuseoSans-300.otf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Museo";
+    font-style: normal;
+    font-weight: 500;
+    font-display: "swap";
+    src: local("Museo Medium"),
+      url("/fonts/Museo/MuseoSans-500.otf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Museo";
+    font-style: normal;
+    font-weight: 700;
+    font-display: "swap";
+    src: local("Museo Bold"),
+      url("/fonts/Museo/MuseoSans-700.otf") format("truetype");
+  }
+}
+
+/* Inter */
+@layer base {
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 900;
+    font-display: "swap";
+    src: local("Inter Black"),
+      url("/fonts/Inter/Inter-Black.ttf") format("truetype");
+  }
+}
+
+/**** Main Fonts ****/
+@layer base {
+  .main-heading-font {
+    @apply font-Inter;
+  }
+  .main-text-font {
+    @apply font-Museo;
+  }
+}
+
 /**** Layout ****/
 /* Layout Container Margin */
 @layer base {
@@ -148,15 +228,15 @@
     @apply mx-12;
     @apply sm:mx-16;
     @apply md:mx-20;
-    @apply lg:mx-24;
-    @apply xl:mx-28;
+    @apply lg:mx-[115px];
+    @apply xl:mx-[115px];
   }
   .my {
     @apply my-12;
     @apply sm:my-16;
     @apply md:my-20;
-    @apply lg:my-24;
-    @apply xl:my-28;
+    @apply lg:my-[120px];
+    @apply xl:my-[120px];
   }
 
   .mxy {
@@ -203,14 +283,14 @@
     @apply sm:px-16;
     @apply md:px-20;
     @apply lg:px-24;
-    @apply xl:px-28;
+    @apply xl:px-[115px];
   }
   .py {
     @apply py-12;
     @apply sm:py-16;
     @apply md:py-20;
     @apply lg:py-24;
-    @apply xl:py-28;
+    @apply xl:py-[120px];
   }
 
   .pxy {
@@ -263,6 +343,15 @@
   .fae {
     @apply flex justify-around items-end;
   }
+  .fsc {
+    @apply flex justify-start items-center;
+  }
+  .fss {
+    @apply flex justify-start items-start;
+  }
+  .fse {
+    @apply flex justify-start items-end;
+  }
 }
 
 /* Flex Column */
@@ -282,7 +371,7 @@
   .fcbs {
     @apply flex flex-col justify-between items-start;
   }
-  flex-col .fcbe {
+  .fcbe {
     @apply flex flex-col justify-between items-end;
   }
   .fcec {
@@ -312,7 +401,7 @@
 /* Heading */
 @layer base {
   .heading {
-    @apply font-Roboto;
+    @apply main-heading-font;
     @apply font-bold;
   }
   .h10 {
@@ -344,8 +433,8 @@
     @apply text-[22px];
     @apply sm:text-[24px];
     @apply md:text-[26px];
-    @apply lg:text-[30px];
-    @apply xl:text-[34px];
+    @apply lg:text-[60px];
+    @apply xl:text-[60px];
   }
   .h50 {
     @apply heading;
@@ -360,7 +449,7 @@
 /* Text base */
 @layer base {
   .tbase {
-    @apply font-Roboto;
+    @apply main-text-font;
   }
   .tbase10 {
     @apply tbase;
@@ -368,7 +457,7 @@
     @apply sm:text-[16px];
     @apply md:text-[18px];
     @apply lg:text-[22px];
-    @apply xl:text-[26px];
+    @apply xl:text-[22px];
   }
   .tbase20 {
     @apply tbase;
@@ -392,7 +481,7 @@
     @apply sm:text-[22px];
     @apply md:text-[24px];
     @apply lg:text-[28px];
-    @apply xl:text-[32px];
+    @apply xl:text-[28px];
   }
   .tbase50 {
     @apply tbase;

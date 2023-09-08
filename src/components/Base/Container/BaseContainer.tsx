@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactComponentElement, ReactNode } from "react";
+import { FC } from "react";
 
 type ConstraintDict = { [key: string]: boolean };
 
@@ -31,20 +31,6 @@ interface BaseContainerProps extends React.ComponentPropsWithoutRef<"div"> {
   withMarginTop?: boolean;
   withMarginBottom?: boolean;
 }
-
-const marginXAxisDict: ConstraintDict = {
-  [BaseContainerClasses.MarginX]: true,
-};
-const marginYAxisDict: ConstraintDict = {
-  [BaseContainerClasses.MarginY]: true,
-};
-const paddingXAxisDict: ConstraintDict = {
-  [BaseContainerClasses.PaddingX]: true,
-};
-const paddingYAxisDict: ConstraintDict = {
-  [BaseContainerClasses.PaddingY]: true,
-};
-const paddingYAxisDictasdsad = { [BaseContainerClasses.PaddingY]: true };
 
 const evaluateClasses = (props: BaseContainerProps): string => {
   var classesArray: string[] = [];
@@ -120,10 +106,13 @@ const removeStringFromArray = (array: string[], string: string) => {
 
 export const BaseContainer: FC<BaseContainerProps> = ({
   children,
+  className,
   ...baseContainerProps
 }) => {
   return (
-    <div className={`${evaluateClasses(baseContainerProps)}`}>{children}</div>
+    <div className={`${className} ${evaluateClasses(baseContainerProps)}`}>
+      {children}
+    </div>
   );
 };
 

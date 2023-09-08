@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
+        Museo: ["Museo", ...defaultTheme.fontFamily.sans],
+        Inter: ["Inter", ...defaultTheme.fontFamily.sans],
       },
     },
     colors: {
@@ -18,7 +19,8 @@ module.exports = {
       action: "#0000FF",
       btnGradientStart: "#3DC694",
       btnGradientEnd: "#38B1D7",
-      txt: "#222222",
+      txt: "#313131",
+      textWhiteLight: "#BCBCBC",
       subtxt: "#444444",
       white: "#FFFFFF",
       black: "#000000",

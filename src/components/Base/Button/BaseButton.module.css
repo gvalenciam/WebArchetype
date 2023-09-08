@@ -2,14 +2,18 @@
 
 @layer components {
   .button {
-    @apply px-2;
+    @apply px-10 py-5;
   }
   .btnPrimary {
     @apply bg-primary;
     @apply text-white;
   }
+  .btnGradient {
+    @apply bg-gradient-to-r from-btnGradientStart to-btnGradientEnd;
+    @apply text-white;
+  }
   .btnRounded {
-    @apply rounded-md;
+    @apply rounded-full;
   }
   .btnShadow {
     box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3);

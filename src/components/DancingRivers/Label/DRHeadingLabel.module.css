@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .h1Label {
+    @apply opacity-90;
+  }
+}
