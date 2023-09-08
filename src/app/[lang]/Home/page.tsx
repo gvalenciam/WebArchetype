@@ -9,7 +9,10 @@ export const HomePage: FC<HomePageProps> = ({ params }) => {
   return (
     <>
       <ContainerPadding className="relative">
-        <BaseLabel text="Hello World!" format="text"></BaseLabel>
+        <BaseLabel
+          text={`Hello World! ${params.lang}`}
+          format="text"
+        ></BaseLabel>
       </ContainerPadding>
     </>
   );
