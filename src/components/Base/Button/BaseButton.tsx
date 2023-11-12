@@ -103,25 +103,21 @@ export const BaseButton: FC<BaseButtonProps> = ({
   iconPreSrc,
   iconPostSrc,
 }) => {
+  const styles = setStylesWithProps(styleProps ?? {}, style);
+  const children = buildChildren(text, iconPreSrc, iconPostSrc);
   return href ? (
     <Link
       href={href}
-      className={`tb40 fbc ${style.button} ${setStylesWithProps(
-        styleProps ?? {},
-        style
-      )} ${className}`}
+      className={`tb40 fbc ${style.button} ${styles} ${className}`}
     >
-      {buildChildren(text, iconPreSrc, iconPostSrc)}
+      {children}
     </Link>
   ) : (
     <div
-      className={`tb40 fbc ${style.button} ${setStylesWithProps(
-        styleProps ?? {},
-        style
-      )} ${className}`}
+      className={`tb40 fbc ${style.button} ${styles} ${className}`}
       onClick={onClick}
     >
-      {buildChildren(text, iconPreSrc, iconPostSrc)}
+      {children}
     </div>
   );
 };

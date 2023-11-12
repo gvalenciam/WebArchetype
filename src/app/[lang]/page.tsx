@@ -1,4 +1,4 @@
-import HomePage from "./Home/page";
+import MainPage from "./main/page";
 import { FC } from "react";
 
 export interface pageProps {
@@ -6,7 +6,7 @@ export interface pageProps {
 }
 
 export const page: FC<pageProps> = ({ params }) => {
-  return <HomePage params={params}></HomePage>;
+  return <MainPage params={params}></MainPage>;
 };
 
 export default page;

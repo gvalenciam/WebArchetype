@@ -6,34 +6,44 @@ export interface ImageCircleIconProps
   src?: string;
   backgroundColor?: string;
   alt: string;
+  imageContainerClassName?: string;
+  imageClassName?: string;
 }
 
 export const ImageCircleIcon: FC<ImageCircleIconProps> = ({
   src,
   backgroundColor,
   alt,
+  imageContainerClassName,
+  imageClassName,
   className,
+  onClick,
 }) => {
   return (
     <div
       className={`fcc ${className} rounded-full ${
-        backgroundColor
+        backgroundColor !== ""
           ? undefined
           : `bg-gradient-to-r from-btnGradientStart to-btnGradientEnd`
       }`}
       style={{
-        backgroundColor: `${backgroundColor ? backgroundColor : undefined}`,
+        backgroundColor: `${
+          backgroundColor !== "" ? backgroundColor : undefined
+        }`,
       }}
+      onClick={onClick}
     >
       {src ? (
-        <Image
-          src={src}
-          width={0}
-          height={0}
-          className="fcc"
-          style={{ width: "100%", height: "auto" }}
-          alt={alt}
-        ></Image>
+        <div className={imageContainerClassName}>
+          <Image
+            src={src}
+            width={0}
+            height={0}
+            className={`fcc ${imageClassName}`}
+            style={{ width: "100%", height: "auto" }}
+            alt={alt}
+          ></Image>
+        </div>
       ) : null}
     </div>
   );

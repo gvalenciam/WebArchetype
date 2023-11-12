@@ -107,10 +107,19 @@ const removeStringFromArray = (array: string[], string: string) => {
 export const BaseContainer: FC<BaseContainerProps> = ({
   children,
   className,
+  style,
+  onClick,
+  id,
   ...baseContainerProps
 }) => {
+  const classes = evaluateClasses(baseContainerProps);
   return (
-    <div className={`${className} ${evaluateClasses(baseContainerProps)}`}>
+    <div
+      id={id}
+      className={`${className} ${classes}`}
+      style={style}
+      onClick={onClick}
+    >
       {children}
     </div>
   );
